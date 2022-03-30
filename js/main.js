@@ -76,6 +76,10 @@ const copyPgn = () => {
   const pgn = game.pgn();
   navigator.clipboard.writeText(pgn);
 };
+const copyFen = () => {
+  const fen = game.fen();
+  navigator.clipboard.writeText(fen);
+};
 var config = {
   draggable: true,
   position: position,
@@ -91,4 +95,5 @@ updateStatus();
 $("#flipOrientationBtn").on("click", board.flip);
 $("#setStartBtn").on("click", gameReset);
 $("#pgn").on("click", copyPgn);
+$("#copyFenString").on("click", copyFen);
 $(window).resize(board.resize);
