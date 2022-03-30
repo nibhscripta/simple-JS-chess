@@ -31,4 +31,5 @@ main {
   overflow: scroll;
   padding: 5px 5px 0 5px;
   border: 0.2px solid #999;
+  cursor: pointer;
 }

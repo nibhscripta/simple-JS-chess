@@ -72,6 +72,10 @@ function gameReset() {
   board.position(game.fen());
   updateStatus();
 }
+const copyPgn = () => {
+  const pgn = game.pgn();
+  navigator.clipboard.writeText(pgn);
+};
 var config = {
   draggable: true,
   position: position,
@@ -86,4 +90,5 @@ board = Chessboard("myBoard", config);
 updateStatus();
 $("#flipOrientationBtn").on("click", board.flip);
 $("#setStartBtn").on("click", gameReset);
+$("#pgn").on("click", copyPgn);
 $(window).resize(board.resize);
