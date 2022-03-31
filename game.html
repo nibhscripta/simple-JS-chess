@@ -11,11 +11,21 @@
   <body>
     <main>
       <div class="board">
-        <div class="top-buttons">
+        <form id="fenForm" class="display-none">
+          <input
+            type="text"
+            name="fen_input"
+            id="fen_input"
+            placeholder="Input Fen String"
+          />
+          <button type="submit">Load</button>
+        </form>
+        <div class="top-buttons" id="top-buttons">
           <button id="setStartBtn">New Game</button>
           <button id="flipOrientationBtn">Flip orientation</button>
           <button id="copyFenString">Copy Fen String</button>
           <button id="pgnToggle">Hide Pgn</button>
+          <button id="loadGame">Load game fen</button>
         </div>
         <div id="myBoard" style="width: 100%"></div>
         <div class="board-status">

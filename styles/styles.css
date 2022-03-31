@@ -42,3 +42,13 @@ main {
 .display-none {
   display: none;
 }
+#fenForm input {
+  padding: 5px;
+}
+.fenForm {
+  margin: 15px 0;
+  width: 100%;
+  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr min-content;
+}
