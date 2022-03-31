@@ -111,10 +111,10 @@ var config = {
 const pgnToggle = () => {
   if (document.getElementById("pgn").classList.contains("display-none")) {
     document.getElementById("pgn").classList.remove("display-none");
-    document.getElementById("pgnToggle").innerText = "Show pgn";
+    document.getElementById("pgnToggle").innerText = "Hide pgn";
   } else {
     document.getElementById("pgn").classList.add("display-none");
-    document.getElementById("pgnToggle").innerText = "Hide pgn";
+    document.getElementById("pgnToggle").innerText = "Show pgn";
   }
 };
 board = Chessboard("myBoard", config);
