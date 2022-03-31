@@ -89,6 +89,16 @@ var config = {
   onSnapEnd: onSnapEnd,
   pieceTheme: "./lib/img/chesspieces/wikipedia/{piece}.png",
 };
+const pgnToggle = () => {
+  console.log("click");
+  if (document.getElementById("pgn").classList.contains("display-none")) {
+    document.getElementById("pgn").classList.remove("display-none");
+    document.getElementById("pgnToggle").innerText = "Show pgn";
+  } else {
+    document.getElementById("pgn").classList.add("display-none");
+    document.getElementById("pgnToggle").innerText = "Hide pgn";
+  }
+};
 
 board = Chessboard("myBoard", config);
 updateStatus();
@@ -96,4 +106,5 @@ $("#flipOrientationBtn").on("click", board.flip);
 $("#setStartBtn").on("click", gameReset);
 $("#pgn").on("click", copyPgn);
 $("#copyFenString").on("click", copyFen);
+$("#pgnToggle").on("click", pgnToggle);
 $(window).resize(board.resize);
