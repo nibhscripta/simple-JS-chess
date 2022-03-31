@@ -90,7 +90,6 @@ var config = {
   pieceTheme: "./lib/img/chesspieces/wikipedia/{piece}.png",
 };
 const pgnToggle = () => {
-  console.log("click");
   if (document.getElementById("pgn").classList.contains("display-none")) {
     document.getElementById("pgn").classList.remove("display-none");
     document.getElementById("pgnToggle").innerText = "Show pgn";
