@@ -84,7 +84,7 @@ loadGameBtn.onclick = () => {
   fenForm.classList.add("fenForm");
   const fenInput = document.getElementById("fen_input");
   fenInput.focus();
-  fenInput.onblur = () => {
+  document.getElementById("hideFenForm").onclick = () => {
     document.getElementById("top-buttons").classList.remove("display-none");
     fenForm.classList.add("display-none");
     fenForm.classList.remove("fenForm");
