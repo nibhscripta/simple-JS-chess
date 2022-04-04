@@ -99,15 +99,6 @@ loadGameBtn.onclick = () => {
     fenForm.classList.remove("fenForm");
   };
 };
-var config = {
-  draggable: true,
-  position: position,
-  orientation: orientation,
-  onDragStart: onDragStart,
-  onDrop: onDrop,
-  onSnapEnd: onSnapEnd,
-  pieceTheme: "./lib/img/chesspieces/wikipedia/{piece}.png",
-};
 const pgnToggle = () => {
   if (document.getElementById("pgn").classList.contains("display-none")) {
     document.getElementById("pgn").classList.remove("display-none");
@@ -124,6 +115,28 @@ document.getElementById("gameOptions").onclick = (gameOptionsBtn) => {
     topBtns.classList.add("display-none");
   };
 };
+document.getElementById("themeSel").onchange = (e) => {
+  const selection = e.target.selectedIndex;
+  if (selection === 0) {
+    config["pieceTheme"] = "./lib/img/chesspieces/wikipedia/{piece}.png";
+  }
+  if (selection === 1) {
+    config["pieceTheme"] = "./lib/img/chesspieces/alpha/{piece}.png";
+  }
+  if (selection === 2) {
+    config["pieceTheme"] = "./lib/img/chesspieces/uscf/{piece}.png";
+  }
+};
+var config = {
+  draggable: true,
+  position: position,
+  orientation: orientation,
+  onDragStart: onDragStart,
+  onDrop: onDrop,
+  onSnapEnd: onSnapEnd,
+  pieceTheme: "./lib/img/chesspieces/wikipedia/{piece}.png",
+};
+document.getElementById("themeSel").selectedIndex = 0;
 board = Chessboard("myBoard", config);
 updateStatus();
 $("#flipOrientationBtn").on("click", board.flip);
