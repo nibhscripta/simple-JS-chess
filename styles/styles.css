@@ -35,9 +35,16 @@ main {
 }
 .top-buttons {
   display: flex;
-  flex-flow: row nowrap;
+  flex-flow: column nowrap;
   justify-content: space-around;
   margin: 10px 0;
+  z-index: 1000;
+  position: absolute;
+  top: 10px;
+  background-color: #edebe9;
+  gap: 10px;
+  padding: 10px;
+  border: 1px solid #111;
 }
 .display-none {
   display: none;

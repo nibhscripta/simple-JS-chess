@@ -117,6 +117,13 @@ const pgnToggle = () => {
     document.getElementById("pgnToggle").innerText = "Show pgn";
   }
 };
+document.getElementById("gameOptions").onclick = (gameOptionsBtn) => {
+  const topBtns = document.getElementById("top-buttons");
+  topBtns.classList.remove("display-none");
+  document.getElementById("hideTopBtns").onclick = () => {
+    topBtns.classList.add("display-none");
+  };
+};
 board = Chessboard("myBoard", config);
 updateStatus();
 $("#flipOrientationBtn").on("click", board.flip);
