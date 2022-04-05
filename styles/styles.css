@@ -38,7 +38,7 @@ button:hover {
   background-color: transparent;
   border: none;
   padding: 5px;
-  border-bottom: #fff solid 2px;
+  border-bottom: #edebe9 solid 2px;
 }
 .load-fen-form input:focus {
   border-bottom: #000 solid 2px;
@@ -88,4 +88,13 @@ body {
 }
 #myBoard {
   margin: 0 auto;
+}
+
+@media (max-width: 400px) {
+  * {
+    font-size: 18px;
+  }
+  .load-fen-form {
+    gap: 7px;
+  }
 }
