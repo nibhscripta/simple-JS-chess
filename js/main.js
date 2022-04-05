@@ -148,3 +148,4 @@ $("#setStartBtn").on("click", gameReset);
 $("#pgn").on("click", copyPgn);
 $("#copyFenString").on("click", copyFen);
 $("#pgnToggle").on("click", pgnToggle);
+$(window).resize(board.resize);
