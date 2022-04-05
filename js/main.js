@@ -79,7 +79,7 @@ function loadGame(fenStr) {
 const loadGameBtn = document.getElementById("loadGame");
 const fenForm = document.getElementById("fenForm");
 loadGameBtn.onclick = () => {
-  document.getElementById("top-buttons").classList.add("display-none");
+  document.getElementById("game-options").classList.add("display-none");
   fenForm.classList.remove("display-none");
   fenForm.classList.add("fenForm");
   const fenInput = document.getElementById("fen_input");
@@ -94,7 +94,7 @@ loadGameBtn.onclick = () => {
     const fenInput = e.target.fen_input.value;
     loadGame(fenInput);
     fenForm.reset();
-    document.getElementById("top-buttons").classList.remove("display-none");
+    document.getElementById("game-options").classList.remove("display-none");
     fenForm.classList.add("display-none");
     fenForm.classList.remove("fenForm");
   };
@@ -136,6 +136,10 @@ var config = {
   onSnapEnd: onSnapEnd,
   pieceTheme: "./lib/img/chesspieces/wikipedia/{piece}.png",
 };
+function br() {
+  board.resize;
+  console.log("resize");
+}
 document.getElementById("themeSel").selectedIndex = 0;
 board = Chessboard("myBoard", config);
 updateStatus();
@@ -144,4 +148,3 @@ $("#setStartBtn").on("click", gameReset);
 $("#pgn").on("click", copyPgn);
 $("#copyFenString").on("click", copyFen);
 $("#pgnToggle").on("click", pgnToggle);
-$(window).resize(board.resize);

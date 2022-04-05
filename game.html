@@ -9,40 +9,36 @@
     <link rel="stylesheet" href="lib/chessboard.css" />
   </head>
   <body>
-    <main>
-      <div class="board">
-        <form id="fenForm" class="display-none">
-          <button id="hideFenForm">Hide</button>
-          <input
-            type="text"
-            name="fen_input"
-            id="fen_input"
-            placeholder="Input Fen String"
-          />
-          <button type="submit">Load</button>
-        </form>
-        <button id="gameOptions">Game Options</button>
-        <div class="top-buttons display-none" id="top-buttons">
-          <button id="hideTopBtns">Hide</button>
-          <button id="setStartBtn">New Game</button>
-          <button id="flipOrientationBtn">Flip orientation</button>
-          <button id="copyFenString">Copy Fen String</button>
-          <button id="pgnToggle">Hide Pgn</button>
-          <button id="loadGame">Load game fen</button>
-          <label for="themeSel">Theme:</label>
-          <select id="themeSel">
-            <option value="">Default</option>
-            <option value="">Alpha</option>
-            <option value="">USCF</option>
-          </select>
-        </div>
-        <div id="myBoard" style="width: 100%"></div>
-        <div class="board-status">
-          <div id="status"></div>
-          <div id="pgn"></div>
-        </div>
+    <div class="game-options" id="game-options">
+      <button id="gameOptions">Game Options</button>
+      <div id="status"></div>
+      <div class="options-menu display-none" id="top-buttons">
+        <button id="hideTopBtns">Hide</button>
+        <button id="setStartBtn">New Game</button>
+        <button id="flipOrientationBtn">Flip orientation</button>
+        <button id="copyFenString">Copy Fen String</button>
+        <button id="pgnToggle">Hide Pgn</button>
+        <button id="loadGame">Load game fen</button>
+        <label for="themeSel">Theme:</label>
+        <select id="themeSel">
+          <option value="">Default</option>
+          <option value="">Alpha</option>
+          <option value="">USCF</option>
+        </select>
       </div>
-    </main>
+    </div>
+    <form class="load-fen-form display-none" id="fenForm">
+      <button id="hideFenForm">Hide</button>
+      <input
+        type="text"
+        name="fen_input"
+        id="fen_input"
+        placeholder="Input Fen String"
+      />
+      <button type="submit">Load</button>
+    </form>
+    <div id="myBoard" style="max-width: 800px"></div>
+    <div id="pgn"></div>
   </body>
   <script src="lib/jquery-3.5.1.min.js"></script>
   <script src="lib/chess.js"></script>

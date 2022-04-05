@@ -4,22 +4,72 @@
   font-family: Arial, Helvetica, sans-serif;
   font-size: 25px;
 }
-body {
-  background-color: #edebe9;
-}
-main {
-  height: 100vh;
-  display: grid;
-  place-items: center;
-  max-width: 700px;
+.game-options {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  max-width: 800px;
   margin: 0 auto;
+  align-items: center;
+  padding: 15px;
 }
-.board {
-  width: 100%;
+button {
+  outline: none;
+  border: 1px #111 solid;
+  background-color: #fff;
+  width: fit-content;
+  padding: 5px;
+  transition: all 50ms ease-in-out;
+  height: fit-content;
 }
-.board-status {
+button:hover {
+  background-color: #000;
+  color: #fff;
+}
+.load-fen-form {
+  display: grid;
+  grid-template-columns: min-content 1fr min-content;
+  max-width: 800px;
+  margin: 15px auto;
+  gap: 20px;
+}
+.load-fen-form input {
+  outline: none;
+  background-color: transparent;
+  border: none;
+  padding: 5px;
+  border-bottom: #fff solid 2px;
+}
+.load-fen-form input:focus {
+  border-bottom: #000 solid 2px;
+}
+.options-menu {
+  position: absolute;
+  top: 0;
   display: flex;
   flex-flow: column nowrap;
+  background-color: #fff;
+  border: 1px solid #000;
+  box-shadow: #000 2px 2px 2px 2px;
+  z-index: 1000;
+}
+.options-menu button {
+  border: none;
+  width: 100%;
+  text-align: left;
+}
+.options-menu select {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 5px;
+}
+.options-menu select:hover {
+  background-color: #000;
+  color: #fff;
+}
+body {
+  background-color: #edebe9;
 }
 #status {
   font-size: 0.7rem;
@@ -27,35 +77,15 @@ main {
 }
 #pgn {
   font-size: 0.6rem;
-  height: 100px;
+  height: 50px;
   overflow: scroll;
-  padding: 5px 5px 0 5px;
-  border: 0.2px solid #999;
   cursor: pointer;
-}
-.top-buttons {
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: space-around;
-  margin: 10px 0;
-  z-index: 1000;
-  position: absolute;
-  top: 10px;
-  background-color: #edebe9;
-  gap: 10px;
-  padding: 10px;
-  border: 1px solid #111;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .display-none {
   display: none;
 }
-#fenForm input {
-  padding: 5px;
-}
-.fenForm {
-  margin: 15px 0;
-  width: 100%;
-  gap: 10px;
-  display: grid;
-  grid-template-columns: min-content 1fr min-content;
+#myBoard {
+  margin: 0 auto;
 }
