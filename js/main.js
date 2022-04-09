@@ -1,5 +1,5 @@
 let orientation = "white";
-let position = "start";
+let position = localStorage.getItem("position") || "start";
 var board = null;
 const game = new Chess();
 let $status = $("#status");
@@ -22,6 +22,7 @@ function onDrop(source, target) {
   });
   if (move === null) return "snapback";
   updateStatus();
+  localStorage.setItem("position", game.fen());
 }
 function onSnapEnd() {
   board.position(game.fen());
@@ -75,6 +76,7 @@ function loadGame(fenStr) {
       updateStatus();
     }
   }
+  localStorage.setItem("position", game.fen());
 }
 const loadGameBtn = document.getElementById("loadGame");
 const fenForm = document.getElementById("fenForm");
@@ -129,8 +131,6 @@ document.getElementById("themeSel").onchange = (e) => {
 };
 var config = {
   draggable: true,
-  position: position,
-  orientation: orientation,
   onDragStart: onDragStart,
   onDrop: onDrop,
   onSnapEnd: onSnapEnd,
@@ -143,8 +143,12 @@ function br() {
 document.getElementById("themeSel").selectedIndex = 0;
 board = Chessboard("myBoard", config);
 updateStatus();
+loadGame(position);
 $("#flipOrientationBtn").on("click", board.flip);
 $("#setStartBtn").on("click", gameReset);
+$("#setStartBtn").on("click", () => {
+  localStorage.setItem("position", game.fen());
+});
 $("#pgn").on("click", copyPgn);
 $("#copyFenString").on("click", copyFen);
 $("#pgnToggle").on("click", pgnToggle);
